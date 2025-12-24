@@ -2,6 +2,17 @@
 -- Modules\Repair.lua: Auto Repair & Gossip Handling
 --------------------------------------------------------------------------------
 local _, ns = ...
+local L = ns.L
+local setmetatable = setmetatable
+
+if not L then
+	L = setmetatable({}, {
+		__index = function(_, k)
+			return k
+		end,
+	})
+	ns.L = L
+end
 local M = {}
 ns.Modules.Repair = M
 
@@ -42,7 +53,7 @@ function M:AttemptRepair(cost)
 		local guildFunds = GetGuildBankWithdrawMoney()
 		if guildFunds == -1 or guildFunds >= cost then
 			RepairAllItems(true) -- true = useGuild
-			ns.Utils.Print(string.format("Guild Repaired %s", ns.Utils.FormatMoney(cost)))
+			ns.Utils.Print(string.format(L.MSG_GUILD_REPAIRED, ns.Utils.FormatMoney(cost)))
 			return
 		end
 	end
@@ -50,9 +61,9 @@ function M:AttemptRepair(cost)
 	-- 2. Fallback to Player Money
 	if GetMoney() >= cost then
 		RepairAllItems()
-		ns.Utils.Print(string.format("Self Repaired %s", ns.Utils.FormatMoney(cost)))
+		ns.Utils.Print(string.format(L.MSG_SELF_REPAIRED, ns.Utils.FormatMoney(cost)))
 	else
-		ns.Utils.Print("|cffff0000Insufficient funds to repair!|r")
+		ns.Utils.Print(L.ERR_REPAIR_FUNDS)
 	end
 end
 

@@ -6,7 +6,9 @@
 ## IconTexture: Interface\AddOns\VendorVanguard\Media\VendorVanguard_Icon
 ## SavedVariables: VendorVanguardDB
 
+Locales\Localization.lua
 Core.lua
 Utils.lua
+Config\Config.lua
 Modules\Repair.lua
 Modules\Sell.lua
