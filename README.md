@@ -1,5 +1,7 @@
- <img width="64" height="64" alt="VendorVanguard" src="https://github.com/user-attachments/assets/88d8c6e8-ef94-4424-98ea-3dc893837f1c" />‎ 
+<img width="64" height="64" alt="New Project (6)" src="https://github.com/user-attachments/assets/ceb5a907-5c3c-4945-980f-bc7a31d965a1" />   
+
 # VendorVanguard
+
 > **Modular automated selling and repairing.**
 
 VendorVanguard is a World of Warcraft addon designed to streamline your vendor interactions. It automatically handles selling junk items and repairing your gear whenever you visit a capable merchant, letting you get back to the adventure faster.
